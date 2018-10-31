@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'starwars';
+    src: url(../fonts/starwars.ttf);
+}
+
+body {
+    /*Image de fond*/
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-image: url('../images/ciel.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*Texte*/
+    color: #fcdd2d;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    /*Alignement*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*Cache de la scrollbar*/
+    overflow: hidden;
+}
+
+/*Esthétique du texte*/
+
+.logo h2 {
+    font-family: 'starwars', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 7em;
+}
+
+    h2 {
+    text-transform: uppercase;
+}
+
+h2, h1 {
+    text-align: center;
+}
+
+.base {
+    font-size: 2.5em;
+}
+
+
+.alongtime {
+    color: lightskyblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 3em;
+    margin-top: 50vh;
+    opacity: 0;
+    background-color: black;
+    
+}
+
+.fondnoir {
+    background-color: black;
+    width: 1300px;
+    height: 900px;
+    opacity: 0;
+    z-index: 2;
+}
+.fondnoir, .alongtime {   
+    animation-name: faraway;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+}
+/* ANimation logo */
+
+.logo {
+    margin-bottom: 40vh;
+    position: absolute;
+    z-index: 1;
+    animation-name: logo;
+    animation-duration: 15s;
+    opacity: 0;
+    transform-origin: center center;
+}
+
+/*Texte introductif*/
+.base {
+    /* centrage de l'élément' */
+    position: absolute;
+    width: 600px;
+    /*Position de base*/
+    bottom: 0;
+    height: 50em;/*Espace de l'animation*/
+    /* cosmétique */
+    text-align: justify;
+    /*Perspective*/
+    transform: perspective(300px) rotateX(25deg);
+    transform-origin: center bottom;
+    
+}
+
+.animation {
+    position: absolute;
+    top: 100%;
+    animation-name: defilement;
+    animation-delay: 12s;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+}
+
+@keyframes faraway {
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes logo {
+    0% {
+        opacity: 1;
+        transform: scale(6);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+}
+
+@keyframes defilement {
+    0% {
+        top: 100%;
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        top: 0%;
+        opacity: 0;
+    }
+}
